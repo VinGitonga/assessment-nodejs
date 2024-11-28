@@ -33,4 +33,7 @@ AppDataSource.initialize()
     });
     logger.info("App data source has been initialized successfully");
   })
-  .catch((err) => logger.error("An error was encounted", err));
+  .catch((err) => {
+    console.log('err', err)
+    logger.error("An error was encounted", err)
+  });

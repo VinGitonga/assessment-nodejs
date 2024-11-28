@@ -1,6 +1,6 @@
 import * as express from "express";
 import { requireLogin } from "../middlewares/auth.middleware";
-import { TransactionController } from "src/controllers/transaction.controller";
+import { TransactionController } from "../controllers/transaction.controller";
 
 const router = express.Router();
 
