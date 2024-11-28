@@ -9,6 +9,9 @@ export class AppEncryptionHashing {
   }
 
   static async comparePassword(hashedPassword: string, password: string) {
+    if(!hashedPassword || password){
+      return false
+    }
     return bcrypt.compareSync(password, hashedPassword);
   }
 

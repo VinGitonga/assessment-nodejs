@@ -40,7 +40,7 @@ export class TransactionController {
 
       await customerRepo.update(
         { id: customerItem.id },
-        { balance: customerItem.balance + (Number(amount) ?? 0) }
+        { balance: Number(customerItem.balance) + (Number(amount) ?? 0) }
       );
 
       return res.status(200).json({ success: true, data: savedTrans });
@@ -131,12 +131,12 @@ export class TransactionController {
 
       const updateCurrentAccResult = await customerRepo.update(
         { id: currentAccount.id },
-        { balance: currentAccount.balance - (Number(amount) ?? 0) }
+        { balance: Number(currentAccount.balance) - (Number(amount) ?? 0) }
       );
 
       const updatedToAcc = await customerRepo.update(
         { id: currentAccount.id },
-        { balance: currentAccount.balance + (Number(amount) ?? 0) }
+        { balance: Number(toAccount.balance) + (Number(amount) ?? 0) }
       );
 
       return res
