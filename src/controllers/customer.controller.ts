@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Customer } from "../entities/customer.entity";
-import { AppEncryptionHashing } from "src/helpers";
-import { AppDataSource } from "src/data-source";
+import { AppEncryptionHashing } from "../helpers";
+import { AppDataSource } from "../data-source";
 
 export class CustomerController {
   static async createAccount(req: Request, res: Response): Promise<any> {

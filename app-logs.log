@@ -1,0 +1,6 @@
+[2024-11-28 12:27:23.263 PM] [31merror[39m: An error was encounted Cannot use import statement outside a module
+[2024-11-28 12:29:11.150 PM] [31merror[39m: An error was encounted Cannot use import statement outside a module
+[2024-11-28 12:29:17.102 PM] [31merror[39m: An error was encounted Cannot use import statement outside a module
+[2024-11-28 12:30:11.123 PM] [31merror[39m: An error was encounted Cannot use import statement outside a module
+[2024-11-28 12:30:25.652 PM] [32minfo[39m: App data source has been initialized successfully
+[2024-11-28 12:30:25.653 PM] [32minfo[39m: Server started at http://localhost:5097

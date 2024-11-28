@@ -1,7 +1,7 @@
 import * as bcrypt from "bcrypt";
-import { IAppJWTPayload } from "src/types/Payload";
+import { IAppJWTPayload } from "../types/Payload";
 import * as jwt from "jsonwebtoken";
-import { JWT_SECRET } from "src/env";
+import { JWT_SECRET } from "../env";
 
 export class AppEncryptionHashing {
   static async hashPassword(password: string) {

@@ -8,6 +8,7 @@
     "start:dev": "concurrently \"tsc -w\" \"nodemon ./build/index.js\"",
     "build": "tsc",
     "start": "ts-node src/index.ts",
+    "start:prod": "node ./build/index.js",
     "typeorm": "typeorm-ts-node-commonjs",
     "migration": "yarn typeorm migration:run -- -d ./src/data-source.ts",
     "migrate": "yarn typeorm migration:generate migrations/change_entity_$npm_config_name -d ./src/data-source.ts",
