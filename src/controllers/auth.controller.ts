@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { AppDataSource } from "src/data-source";
-import { Customer } from "src/entities/customer.entity";
-import { AppEncryptionHashing } from "src/helpers";
+import { AppDataSource } from "../data-source";
+import { Customer } from "../entities/customer.entity";
+import { AppEncryptionHashing } from "../helpers";
 
 export class AuthController {
   static async login(req: Request, res: Response): Promise<any> {
