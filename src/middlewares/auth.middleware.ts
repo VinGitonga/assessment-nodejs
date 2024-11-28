@@ -6,7 +6,7 @@ export const requireLogin = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Promise<any> => {
   const header = req.headers.authorization;
 
   if (!header) {

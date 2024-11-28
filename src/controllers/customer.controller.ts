@@ -4,7 +4,7 @@ import { AppEncryptionHashing } from "src/helpers";
 import { AppDataSource } from "src/data-source";
 
 export class CustomerController {
-  static async createAccount(req: Request, res: Response) {
+  static async createAccount(req: Request, res: Response): Promise<any> {
     try {
       const { name, phoneNo, password } = req.body;
 
@@ -35,7 +35,7 @@ export class CustomerController {
     }
   }
 
-  static async getAccountBalance(req: Request, res: Response) {
+  static async getAccountBalance(req: Request, res: Response): Promise<any> {
     try {
       const customerRepo = AppDataSource.getRepository(Customer);
 

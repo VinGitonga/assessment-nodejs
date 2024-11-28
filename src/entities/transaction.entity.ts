@@ -2,6 +2,12 @@ import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 import BaseModel from "./base-model.entity";
 import { Customer } from "./customer.entity";
 
+export enum TransactionType {
+  SELF = "self",
+  DEPOSIT = "deposit",
+  TRANSFER = "transfer",
+}
+
 @Entity()
 export class Transaction extends BaseModel {
   // constains all the metadata from MPESA
@@ -29,4 +35,7 @@ export class Transaction extends BaseModel {
     referencedColumnName: "id",
   })
   customer: Customer;
+
+  @Column({ type: "enum", enum: TransactionType, default: TransactionType.SELF })
+	type: TransactionType;
 }
