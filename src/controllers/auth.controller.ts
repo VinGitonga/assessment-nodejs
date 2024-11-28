@@ -18,6 +18,8 @@ export class AuthController {
 
       const foundCustomer = await customerRepo.findOne({ where: { phoneNo } });
 
+      console.log('found', foundCustomer)
+
       const isPasswordValid = AppEncryptionHashing.comparePassword(
         foundCustomer?.password,
         password
@@ -41,6 +43,8 @@ export class AuthController {
           msg: "Authenticated successfully",
           data: { user: { ...foundCustomer, password: null }, token },
         });
-    } catch (err) {}
+    } catch (err) {
+      return res.status(400).json({success: false, msg: "Invalid phone no or password"})
+    }
   }
 }
