@@ -7,11 +7,12 @@ import { authRouter } from "./routes/auth.route";
 import { customerRouter } from "./routes/customer.route";
 import { transactionRouter } from "./routes/transaction.route";
 import { errorHandler } from "./middlewares/error.middleware";
+import { AuthController } from "./controllers/auth.controller";
 
 const app = express();
 
 app.use(express.json());
-app.use(errorHandler as any);
+// app.use(errorHandler as any);
 app.use(morganMiddleware);
 
 app.get("/", (req: express.Request, res: express.Response) => {
@@ -19,6 +20,7 @@ app.get("/", (req: express.Request, res: express.Response) => {
 });
 
 app.use("/auth", authRouter);
+app.use("/auth/signin", AuthController.login);
 app.use("/customer", customerRouter);
 app.use("/transaction", transactionRouter);
 

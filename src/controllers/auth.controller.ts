@@ -44,6 +44,7 @@ export class AuthController {
           data: { user: { ...foundCustomer, password: null }, token },
         });
     } catch (err) {
+      console.log('err', err)
       return res.status(400).json({success: false, msg: "Invalid phone no or password"})
     }
   }
